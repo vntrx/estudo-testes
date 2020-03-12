@@ -2,12 +2,20 @@ import formatDate from '@/helper/formatDate'
 
 describe('formatDate helper', () => {
 
-    it('Should covert ISO date to BR date', () => {
-        
-        const action = formatDate('2019-02-03') // ddmmyyyy
-        const action2 = formatDate('2020-03-05') // ddmmyyyy
+    it('deve converter para BR ', () => {
+        const action = formatDate('2019-02-03', 'BR')
 
-        expect(action).toBe('03022019')
-        expect(action2).toBe('05032020')
+        expect(action).toBe('03/02/2019')
+    })
+
+    it ('deve converter para US', () => {
+        const action = formatDate('2019-02-03', 'US')
+
+        expect(action).toBe('02/03/2019')
     })
 })
+
+// aaaa-mm-dd
+
+// BR - dd/mm/aaaa
+// US - mm/dd/aaaa
